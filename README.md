@@ -27,10 +27,16 @@ melded defines parent-children to combine, to normalize ragged hierarchies.
 
 # example usage:
 -an example of how the 'shred1' config works (with the included NFL Gameday JSON file) is as follows:
+
  -starts at the top
+ 
  -in the first key/value list (aka level 1), which is just the gameid and 'nextupdate', it excludes 'nextupdate' and anything that might be below it.    excluded.Add("nextupdate",1)
       so by default it automatically brings in the gameid, without knowing what it is.
+      
  -in the next level (level 2, i.e. children of the gameid), it only includes drives and its descendants  included.Add("drives",2)
- -in the next level (level 3), it only excludes 'crntdrv' and its descendants    exclude.Add("crntdrv",3)
- -in the next level (level 4), it only excludes 'plays' and its descendats   exclude.Add("plays",4)
+ 
+ -in the next level (level 3), it only excludes 'crntdrv' and its descendants     excluded.Add("crntdrv",3)
+ 
+ -in the next level (level 4), it only excludes 'plays' and its descendats   excluded.Add("plays",4)
+ 
  -'start' and 'end' on level 4 have children, whereas none of the other members do.. so those two members are 'melded' to their children to collapse the level. (if those children had descendants it would still keep going though and end up with more columns for those rows)  melded.Add("start",4),   melded.Add("end",4)
