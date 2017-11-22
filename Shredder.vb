@@ -21,7 +21,7 @@ Module Shredder
     Sub shred1()
         Console.WriteLine("Hello World!")
         Dim innerobj As New Object
-        Dim txtfile As String = File.ReadAllText("C:\Users\nflvm\Desktop\python\tmp2.json")
+        Dim txtfile As String = File.ReadAllText("tmp2.json")
         ' Object obj = JsonHelper.Deserialize(txtfile)
         Dim obj As Object = JsonHelper.Deserialize(txtfile)
         ' Console.WriteLine("{0}  yo", obj.GetType().ToString())
@@ -59,7 +59,7 @@ Module Shredder
     Sub shred2()
         Console.WriteLine("Hello World!")
         Dim innerobj As New Object
-        Dim txtfile As String = File.ReadAllText("C:\Users\nflvm\Desktop\python\tmp2.json")
+        Dim txtfile As String = File.ReadAllText("tmp2.json")
         ' Object obj = JsonHelper.Deserialize(txtfile)
         Dim obj As Object = JsonHelper.Deserialize(txtfile)
         ' Console.WriteLine("{0}  yo", obj.GetType().ToString())
@@ -96,7 +96,7 @@ Module Shredder
     Sub shred3()
         Console.WriteLine("Hello World!")
         Dim innerobj As New Object
-        Dim txtfile As String = File.ReadAllText("C:\Users\nflvm\Desktop\python\tmp2.json")
+        Dim txtfile As String = File.ReadAllText("tmp2.json")
         ' Object obj = JsonHelper.Deserialize(txtfile)
         Dim obj As Object = JsonHelper.Deserialize(txtfile)
         ' Console.WriteLine("{0}  yo", obj.GetType().ToString())
@@ -133,7 +133,7 @@ Module Shredder
     Sub shred4()
         Console.WriteLine("Hello World!")
         Dim innerobj As New Object
-        Dim txtfile As String = File.ReadAllText("C:\Users\nflvm\Desktop\python\tmp2.json")
+        Dim txtfile As String = File.ReadAllText("tmp2.json")
         ' Object obj = JsonHelper.Deserialize(txtfile)
         Dim obj As Object = JsonHelper.Deserialize(txtfile)
         ' Console.WriteLine("{0}  yo", obj.GetType().ToString())
@@ -460,40 +460,6 @@ Module Shredder
         End If
     End Sub
 
-    Sub prin(obj)
-        Dim pair As KeyValuePair(Of String, Object)
-        Dim dictionary As New Dictionary(Of String, Object)
-        Dim list As New List(Of Object)
-        Dim str As String()
-        If Object.ReferenceEquals(obj.GetType(), list.GetType()) Then
-            For Each val In obj
-                If Object.ReferenceEquals(val.GetType(), dictionary.GetType()) Or Object.ReferenceEquals(val.GetType(), list.GetType()) Then
-                    prin(val)
-                Else
-                    'Console.WriteLine("{0}", val)
-                End If
-            Next
-        Else
-            For Each pair In obj
-                If pair.Value Is Nothing Then
-                    'Console.WriteLine("{0}, {1}", pair.Key, "NULL")
-                Else
-
-                    'Console.WriteLine("key: {0}, {1}", pair.Key.GetType, pair.Key)
-                    'Console.WriteLine("oj {0}", pair.Value.GetType)
-                    'Console.WriteLine("ok {0}", pair.Key)
-                    'Console.WriteLine("ol {0}", pair.Value)
-                    If Object.ReferenceEquals(pair.Value.GetType(), dictionary.GetType()) Then
-                        prin(pair.Value)
-                    Else
-                        'Console.WriteLine("{0}, {1}", pair.Key, pair.Value)
-                        'Console.WriteLine("type {0}, type {1}", pair.Key.GetType(), pair.Value.GetType())
-                    End If
-                End If
-
-            Next
-        End If
-    End Sub
 End Module
 
 Public NotInheritable Class JsonHelper
