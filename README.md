@@ -11,7 +11,7 @@ include defines branches to include explicitly.
 exclude defines branches to exclude (thereby including all other branches implicitly).
 melded defines parent-children to combine, to normalize ragged hierarchies.
 
-notes:
+# notes:
 -include and exclude are mutually exclusive by level.
   so that means, that you can either include specific members in your filter, or exclude specific members.
 -if you include members, it filters the subsequent read to only those and their descendants.
@@ -25,7 +25,7 @@ notes:
 -the syntax is as follows:
       excluding 'nextupdate' at level 1 would be: exclude.Add("nextupdate",1)
 
-
+# example usage:
 -an example of how the 'shred1' config works (with the included NFL Gameday JSON file) is as follows:
  -starts at the top
  -in the first key/value list (aka level 1), which is just the gameid and 'nextupdate', it excludes 'nextupdate' and anything that might be below it.    excluded.Add("nextupdate",1)
