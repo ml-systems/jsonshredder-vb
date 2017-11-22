@@ -11,6 +11,8 @@ include defines branches to include explicitly.
 exclude defines branches to exclude (thereby including all other branches implicitly).
 melded defines parent-children to combine, to normalize ragged hierarchies.
 
+currently there are four differently-configured calls to the core function (iterprint), that each parse pieces of the NFL Gameday API JSON
+
 # notes:
 -include and exclude are mutually exclusive by level.
   so that means, that you can either include specific members in your filter, or exclude specific members.
