@@ -1,5 +1,5 @@
 # jsonshredder-vb
-a highly-configurable, flexible JSON-to-MDList converter
+a highly-configurable, flexible JSON-to-MDList converter for vb.net
 
 This function is built for difficult JSON, that needs to be converted to a tabular format, but which doesn't have an easily-convertible format (unique/non-standardized keys, ragged hierarchy, etc)
 
